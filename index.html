@@ -12,8 +12,59 @@
 
     <!-- The form where you type a new task -->
     <form id="task-form">
-      <input id="task-input" type="text" placeholder="What do you need to do?" autocomplete="off">
-      <button type="submit">Add</button>
+      <div class="form-row">
+        <input id="task-input" type="text" placeholder="What do you need to do?" autocomplete="off">
+        <button type="submit">Add</button>
+      </div>
+
+      <button type="button" id="toggle-options" class="link-button">+ Due date, duration &amp; repeat</button>
+
+      <!-- Extra options, hidden until "toggle-options" is clicked -->
+      <div id="options" hidden>
+        <label>
+          Due date
+          <input id="due-input" type="date">
+        </label>
+
+        <label>
+          Takes
+          <span class="inline">
+            <input id="duration-amount" type="number" min="0" step="any" placeholder="e.g. 30">
+            <select id="duration-unit">
+              <option value="min">minutes</option>
+              <option value="hour">hours</option>
+            </select>
+          </span>
+        </label>
+
+        <label>
+          Repeats
+          <select id="repeat-select">
+            <option value="none">Doesn't repeat</option>
+            <option value="daily">Every day</option>
+            <option value="weekly">Every week</option>
+            <option value="monthly">Every month</option>
+            <option value="custom">Custom...</option>
+          </select>
+        </label>
+
+        <label id="custom-repeat" hidden>
+          Repeat every
+          <span class="inline">
+            <input id="repeat-every" type="number" min="1" value="2">
+            <select id="repeat-unit">
+              <option value="day">days</option>
+              <option value="week">weeks</option>
+              <option value="month">months</option>
+            </select>
+          </span>
+        </label>
+
+        <label id="until-label" hidden>
+          Stop repeating after (optional)
+          <input id="until-input" type="date">
+        </label>
+      </div>
     </form>
 
     <!-- Buttons to choose which tasks to show -->
@@ -28,7 +79,7 @@
 
     <footer>
       <span id="task-count"></span>
-      <button id="clear-done">Clear done</button>
+      <button id="clear-done" class="link-button">Clear done</button>
     </footer>
   </main>
 
