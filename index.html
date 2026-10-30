@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>My To-Do List</h1>
+
+    <!-- The form where you type a new task -->
+    <form id="task-form">
+      <input id="task-input" type="text" placeholder="What do you need to do?" autocomplete="off">
+      <button type="submit">Add</button>
+    </form>
+
+    <!-- Buttons to choose which tasks to show -->
+    <div class="filters">
+      <button class="filter active" data-filter="all">All</button>
+      <button class="filter" data-filter="active">To do</button>
+      <button class="filter" data-filter="done">Done</button>
+    </div>
+
+    <!-- The tasks are added here by script.js -->
+    <ul id="task-list"></ul>
+
+    <footer>
+      <span id="task-count"></span>
+      <button id="clear-done">Clear done</button>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
